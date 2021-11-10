@@ -1,34 +1,9 @@
 name: "api-name"
 environment:
   description: "staging"
-  uri: "staging.magalu.com.br"
+  uri: "staging.api.com.br"
 gateway:
   id: "product-id"
   name: "gateway-name"
   openapi_file: ${DIRECTORY}  
   
-  
-#Release API staging:
-#  stage: staging-release
-#  image: $CI_KNIFE_KONG
-#  services:
-#    - docker:18.09-dind
-#  variables:
-#    GATEWAY_OPENAPI_FILE: ${STAGING_MODULES_DIRECTORY}/${ADELPHA_DIST_FILE}
-#    GATEWAY_CONFIG: ${STAGING_DIST_DIRECTORY}/${ADELPHA_CONFIG_FILE}
-#    GATEWAY_ENVIRONMENT: homolog
-#    BACKEND_NAME: maas-product-api
-#    BACKEND_NAMESPACE: maas-product-api
-#    BACKEND_PORT: "80"
-#    GATEWAY_ID: adelpha
-#    API_NAME: adelpha
-#  before_script:
-#    - mkdir -p $STAGING_DIST_DIRECTORY
-#    - cp $STAGING_MODULES_DIRECTORY/$ADELPHA_CONFIG_FILE $STAGING_DIST_DIRECTORY/$ADELPHA_CONFIG_FILE
-#  script:
-#    - sed -i 's/$OIDC_CLIENT_SECRET/'"${STAGING_OIDC_CLIENT_SECRET}/g" ${STAGING_DIST_DIRECTORY}/${ADELPHA_CONFIG_FILE}
-#    - ci-knife openapi2gateway
-#  only:
-#    - master
-#  when: manual
-# source > https://gitlab.luizalabs.com/open-platform/api-adelpha/-/blob/master/.gitlab-ci.yml
