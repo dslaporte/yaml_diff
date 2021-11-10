@@ -1,4 +1,4 @@
 name: "api-name"
 environment:
   description: "production"
-  uri: "production.magalu.com.br"
+  uri: "production.api.com.br"
